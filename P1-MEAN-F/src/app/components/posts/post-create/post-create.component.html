@@ -1,0 +1,32 @@
+<div>
+  <form (submit)="createPost(postForm)" #postForm='ngForm'>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        ngModel
+        name="title"
+        placeholder="Post title"
+        id="postConTentTextArea"
+        #title="ngModel"
+        required minlength='1'>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        type="text"
+        cdkTextareaAutosize
+        ngModel
+        placeholder="Content"
+        name="content"
+        #content="ngModel"
+        id="postConTentTextArea"
+        required
+        minlength='1'>
+      </textarea>
+      <mat-error *ngIf="content.invalid">Please enter the post content</mat-error>
+    </mat-form-field>
+    <br>
+    <button class="submit-btn" mat-raised-button color='primary' type='submit'>Save post</button>
+  </form>
+</div>

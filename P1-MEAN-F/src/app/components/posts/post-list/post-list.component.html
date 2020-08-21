@@ -1,0 +1,22 @@
+<mat-accordion isMulti='false' *ngIf='postList.length > 0; else noPost'>
+  <div *ngFor="let item of postList; index as i">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{item.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{item.content.substring(0,15)+'...'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{item.content}}</p>
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="nextStep()">Edit</button>
+        <button mat-raised-button color="primary" (click)="nextStep()">Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
+<ng-template #noPost>
+  <div>You haven't post anything yet</div>
+</ng-template>

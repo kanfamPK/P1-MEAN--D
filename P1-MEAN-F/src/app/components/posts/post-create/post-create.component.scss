@@ -1,0 +1,19 @@
+mat-form-field {
+  width: 100%;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+:host {
+  display: block;
+  margin-top: 150*1px;
+}
+
+.submit-btn {
+  margin-top: 15px;
+}
+
+
+
