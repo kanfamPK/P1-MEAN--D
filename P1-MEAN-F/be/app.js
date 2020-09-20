@@ -25,7 +25,10 @@ app.use('/api/posts',(req,res,next)=>{
       content: '456456456'
     }
   ]
-  res.json(posts);
+  res.status(200).json({
+    message: 'Posts fetched successfully',
+    posts: posts
+  });
 });
 
 module.exports = app;
